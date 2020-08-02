@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        // passing the room id into frontend
+        const ROOM_ID = "<%= roomId %>"
+    </script>
+
+    <!--// peerjs library  
+        // defer so that it runs in top to bottom form-->
+    <script defer src="https://unpkg.com/peerjs@1.3.1/dist/peerjs.min.js"></script>
+
+    <!-- //CREATING SOCKET.io in Frontend-->
+    <script src="/socket.io/socket.io.js" defer></script>
+    <script src="script.js" defer></script>
+    <title>Zoom Clone</title>
+    <style>
+        #video-grid{
+            display: grid;
+            /* 300px wide video */
+            grid-template-columns: repeat(auto-fill, 300px);
+            /* 300px tall video box to be square  */
+            grid-auto-rows: 300px;
+            grid-gap: 50px;
+        }
+
+        /* for filling the whole space by video */
+        video{
+            width: 100%;
+            height: 100%;
+            /* If we use object-fit: cover; it will cut off the sides of the image,
+             preserving the aspect ratio, and also filling in the space */
+            object-fit: cover;
+        }
+        body{
+            background-color: #7f8c8d;
+        }
+    </style>
+</head>
+<body>
+    
+    <h1>Just! Keep Chatting</h1>
+
+    <div id="video-grid">
+            
+    </div>
+</body>
+</html>
